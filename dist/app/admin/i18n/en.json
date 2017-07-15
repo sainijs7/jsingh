@@ -1,0 +1,16 @@
+{
+	"APP": {
+		"SHOW": "Show",
+		"ENTRY": "Entry",
+		"ENTRIES": "Entries",
+		"TO": "to"
+	},
+
+	"ADMIN_USERS": {
+		"SINGULAR": "Admin User",
+		"PLURAL": "Admin Users",
+		"BROWSE": "Browse Admin Users",
+		"ADD": "Add New Admin User",
+		"SEARCH": "Search Admin Users"
+	}
+}

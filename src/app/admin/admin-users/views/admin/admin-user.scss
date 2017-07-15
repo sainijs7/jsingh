@@ -1,0 +1,30 @@
+/* ==========================================================================
+	CSS Main Heading
+   ========================================================================== */
+
+.admin-user {
+
+	// code here
+.user-img {
+	max-width: 250px;
+	margin: 0 auto
+
+}
+
+	/* MQ
+	--------------------------------------------- */
+
+	@media only screen and (max-width: $layout-breakpoint-xs - 1) { // [xs-only]
+	}
+	@media screen and (min-width: $layout-breakpoint-xs) { // [sm-up]
+	}
+	@media screen and (min-width: $layout-breakpoint-sm) { // [md-up]
+	}
+	@media screen and (min-width: $layout-breakpoint-xs) and (orientation:portrait) { // [sm-up, portrait]
+	}
+	@media only screen and (max-width: $layout-breakpoint-sm - 1) { // [sm-down]
+	}
+}
+
+/* CSS Subheading
+--------------------------------------------- */

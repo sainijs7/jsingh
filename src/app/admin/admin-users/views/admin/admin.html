@@ -1,0 +1,148 @@
+<div layout="row">
+
+            <!-- BASIC FORM -->
+            <div class="form-wrapper md-whiteframe-1dp" flex="60">
+
+                <form name="user" class="md-inline-form" novalidate>
+
+                    <div class="form-title">User Details</div>
+
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="fullname" ng-model="vm.user.fullname"
+                                   placeholder="Fullname"
+                                   required>
+                            <div ng-messages="user.fullname.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Firstname field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <input type="email" name="email " ng-model="vm.user.email" placeholder="Email "
+                                   required>
+                            <div ng-messages="user.email.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Email field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout="column" layout-gt-xs="row">
+                        <!-- <md-input-container flex>
+                            <label>City</label>
+                            <input type="text" name="city" ng-model="vm.user.city">
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>State</label>
+                            <md-select ng-model="vm.user.state">
+                                <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                                    {{state.abbrev}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container> -->
+
+                        <md-input-container flex>
+                            <input  name="phone" ng-model="vm.user.phone" placeholder="9988776655"
+                                  md-maxlength="10"  required>
+                            <div ng-messages="user.phone.$error"
+                                 role="alert" multiple>
+                                <div ng-message="required">
+                                    <span>Phone Number field is required.</span>
+                                </div>
+								<div ng-message="md-maxlength">
+                                    <span>Phone No can't be longer than 10 characters.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <md-input-container class="md-block">
+                        <label>Short Bio</label>
+                        <textarea ng-model="vm.user.shortBio" md-maxlength="150" max-rows="5"></textarea>
+                    </md-input-container>
+					
+					
+					 <md-input-container class="md-block">
+                         <div class="user-detail-form-container md-background-bg md-whiteframe-1dp">
+
+							<div id="user-image-uploader"
+								 flow-init="vm.ngFlowOptions"
+								 flow-name="vm.ngFlow.flow"
+								 flow-files-submitted="vm.upload()"
+								 flow-file-added="vm.fileAdded($file)"
+								 flow-file-success="vm.fileSuccess($file, $message)"
+								 flow-complete="vm.uploadComplete()"
+								 flow-drop
+								 flow-drag-enter="vm.dropping=true"
+								 flow-drag-leave="vm.dropping=false"
+								 ng-class="{'dropping':vm.dropping}">
+
+								<div class="drop-text hint-text" layout="row" layout-align="center center">
+									<span translate="EC.DROP_TO_UPLOAD">Drop to upload</span>
+								</div>
+
+								<div class="upload-button" layout="column" layout-align="center center">
+									<md-button class="md-accent md-raised" flow-btn>
+										Upload
+									</md-button>
+									<span class="secondary-text mt-8">You can also drop images here to upload. Only PNG, JPG - Max. 8MB</span>
+								</div>
+
+								<div class="mv-32" layout="row" layout-align="center center">
+									<div class="image-zoom-area">
+										<img wip-image-zoom="vm.imageZoomOptions">
+									</div>
+								</div>
+
+								<div layout="row" layout-align="start start" layout-wrap>
+								<img class="media user-img" ng-src="{{vm.user.media.url }}" style="max-width: 250px; margin: 0 auto;">
+									<div ng-repeat="image in vm.user.images" ng-switch="image.type">
+										<div class="user-image uploading" ng-switch-when="uploading" layout="row"
+											 layout-align="center center">
+											<div class="overlay" layout="column" layout-align="center center">
+												<md-progress-linear md-mode="determinate"
+																	value="{{image.file.progress() * 100}}">
+												</md-progress-linear>
+											</div>
+											<img class="media" flow-img="image.file">
+										</div>
+
+										<div class="user-image"  layout="row"
+											 layout-align="center center">
+											<img class="media" ng-src="{{image.url}}"
+												 ng-click="vm.updateImageZoomOptions(image.url)">
+										</div>
+									</div>
+								</div>
+
+								<div class="p-8 font-size-12" layout="row" layout-align="center center">
+									Click on images to activate the zoom!
+								</div>
+							</div>
+						</div>
+                    </md-input-container>
+
+                    <md-button type="submit" class="md-raised md-accent" aria-label="Submit"
+                               ng-disabled="user.$invalid || user.$pristine">
+                        Submit
+                    </md-button>
+                </form>
+
+            </div>
+            <!-- / BASIC FORM -->
+
+            <!-- BASIC FORM DATA -->
+          <!--   <div class="form-wrapper form-data-wrapper md-whiteframe-1dp" flex="40">
+                <div class="form-title">Form ng-model data</div>
+                <div class="json-data-wrapper">
+                    <pre>{{vm.user | json}}</pre>
+                </div>
+            </div> -->
+            <!-- / BASIC FORM DATA -->
+        </div>
