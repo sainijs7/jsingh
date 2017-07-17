@@ -1,0 +1,85 @@
+<div layout="row">
+
+            <!-- BASIC FORM -->
+            <div class="form-wrapper md-whiteframe-1dp" flex="80">
+
+                <form name="notification" class="md-inline-form" novalidate>
+
+                    <div class="form-title">Add Notification</div>
+
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="title" ng-model="vm.notification.title"
+                                   placeholder="Title"
+                                   required>
+                            <div ng-messages="notification.title.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Title is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+
+                       
+                    </div>
+
+                    <div layout="column" layout-gt-sm="row">
+						<md-input-container flex>
+							<label>Content Summary</label>
+							<textarea name="contentSummary" ng-model="vm.notification.contentSummary" md-maxlength="150" max-rows="5" required></textarea>
+							<div ng-messages="notification.contentSummary.$error"
+									 role="alert">
+									<div ng-message="required">
+										<span>Content Summary is required.</span>
+									</div>
+							</div>
+						</md-input-container>
+					</div>
+					
+					<div layout="column" layout-gt-sm="row">
+						<md-input-container  flex="20">
+							<label>Status</label>
+							<md-select ng-model="vm.notification.status">
+								<md-option value="Draft">
+									Draft
+								</md-option>
+								<md-option value="Published">
+									Published
+								</md-option>
+							</md-select>
+						</md-input-container>
+						
+						<md-input-container  flex="20">	
+							<md-datepicker ng-model="vm.notification.expiryDate" ng-required="true" name="expiryDate" md-placeholder="Expiry Date" ></md-datepicker>
+							<div ng-messages="notification.expiryDate.$error"
+									 role="alert">
+									<div ng-message="required">
+										<span>ExpiryDate is required.</span>
+									</div>
+							</div>
+						</md-input-container>
+					</div>
+					
+					
+					
+					
+					 
+
+                    <md-button type="submit" class="md-raised md-accent" aria-label="Submit"
+                               ng-disabled="notification.$invalid || notification.$pristine">
+                        Submit
+                    </md-button>
+                </form>
+
+            </div>
+            <!-- / BASIC FORM -->
+
+            <!-- BASIC FORM DATA -->
+          <!--   <div class="form-wrapper form-data-wrapper md-whiteframe-1dp" flex="40">
+                <div class="form-title">Form ng-model data</div>
+                <div class="json-data-wrapper">
+                    <pre>{{vm.user | json}}</pre>
+                </div>
+            </div> -->
+            <!-- / BASIC FORM DATA -->
+        </div>

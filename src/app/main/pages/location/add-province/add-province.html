@@ -1,0 +1,83 @@
+<div layout="row">
+
+            <!-- BASIC FORM -->
+            <div class="form-wrapper md-whiteframe-1dp" flex="80">
+
+                <form name="province" class="md-inline-form" novalidate>
+
+                    <div class="form-title">Add Location (Province) </div>
+
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="provinceName" ng-model="vm.province.provinceName"
+                                   placeholder="Province Name"
+                                   required>
+                            <div ng-messages="province.provinceName.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Province Name is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+
+                       
+                    </div>
+
+                    <div layout="column" layout-gt-xs="row">
+                        
+						<md-input-container flex>
+                            <input type="text" name="latitude " ng-model="vm.province.latitude" placeholder="12.1234 "
+                                   required>
+                            <div ng-messages="province.latitude.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Latitude field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+						
+                        <md-input-container flex>
+                           <input type="text" name="longtitude " ng-model="vm.province.longtitude" placeholder="12.1234 "
+                                   required>
+                            <div ng-messages="province.longtitude.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Longtitude field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+					
+					 <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="googlePlaceId" ng-model="vm.province.googlePlaceId"
+                                   placeholder="Google Place ID" >
+                        </md-input-container>
+					</div>
+
+                    <md-input-container class="md-block">
+                        <label>Short Desc </label>
+                        <textarea ng-model="vm.province.shortDesc" md-maxlength="150" max-rows="5"></textarea>
+                    </md-input-container>
+					
+					
+					 
+
+                    <md-button type="submit" class="md-raised md-accent" aria-label="Submit"
+                               ng-disabled="province.$invalid || province.$pristine">
+                        Submit
+                    </md-button>
+                </form>
+
+            </div>
+            <!-- / BASIC FORM -->
+
+            <!-- BASIC FORM DATA -->
+          <!--   <div class="form-wrapper form-data-wrapper md-whiteframe-1dp" flex="40">
+                <div class="form-title">Form ng-model data</div>
+                <div class="json-data-wrapper">
+                    <pre>{{vm.user | json}}</pre>
+                </div>
+            </div> -->
+            <!-- / BASIC FORM DATA -->
+        </div>
