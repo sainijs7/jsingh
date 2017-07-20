@@ -9,7 +9,7 @@
 	"ADMIN_USERS": {
 		"SINGULAR": "Admin User",
 		"PLURAL": "Admin Users",
-		"BROWSE": "Browse Admin Users",
+		"BROWSE": "Admin Users",
 		"ADD": "Add New Admin User",
 		"SEARCH": "Search Admin Users"
 	}
