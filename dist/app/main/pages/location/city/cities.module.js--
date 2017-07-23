@@ -1,0 +1,45 @@
+(function ()
+{
+    'use strict';
+
+    angular
+        .module('app.pages.location.cities', ['datatables'])
+        .config(config);
+
+    /** @ngInject */
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
+    {
+        // State
+        $stateProvider.state('app.pages_location_citiesa', {
+            url      : '/pages/location/citiesa',
+            views    : {
+                'content@app': {
+                    templateUrl: 'app/main/pages/location/cities/cities.html',
+                    controller : 'CitiesController as vm'
+                }
+            },
+			resolve  : {
+				Cities: function (citiesService)
+				{
+					return citiesService.getCities();
+				}
+			},
+            bodyClass: 'cities'
+        });
+
+        // Translation
+        $translatePartialLoaderProvider.addPart('app/main/pages/location/cities');
+		
+		// API
+
+		msApiProvider.register('cities.cities', ['app/data/dummy/cities.json']);
+
+       /*  // Navigation
+         msNavigationServiceProvider.saveItem('pages.Location.citiesafsd', {
+            title : 'Cities',
+            state : 'app.pages_location_cities',
+            weight: 4
+        });  */
+    }
+
+})();

@@ -34,15 +34,13 @@
 		msApiProvider.register('sample', ['app/data/sample/sample.json']);
 
 		// Navigation
-		msNavigationServiceProvider.saveItem('sample', {
+		/* msNavigationServiceProvider.saveItem('sample', {
 			title    : 'Sample',
 			icon     : 'icon-tile-four',
 			state    : 'app.sample',
-			/*stateParams: {
-				'param1': 'page'
-			 },*/
+			
 			translate: 'SAMPLE.SAMPLE_NAV',
 			weight   : 0
-		});
+		}); */
 	}
 })();

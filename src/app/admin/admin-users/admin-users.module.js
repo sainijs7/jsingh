@@ -53,12 +53,12 @@
 					}
 				},
 				resolve: {
-					/**
-					Product: function (adminUsersService)
+					
+					Admin: function (adminUsersService)
 					{
-						return adminUsersService.newProduct();
+						return adminUsersService.newAdminUser();
 					}
-					**/
+					
 				},
 				bodyClass: 'admin-users add'
 			})
@@ -72,12 +72,14 @@
 					}
 				},
 				resolve  : {
-					/**
-					Product: function ($stateParams, users, adminUsersService)
+					
+					Admin: function ($stateParams, adminUsersService)
 					{
-						return adminUsersService.getProduct($stateParams.id);
+						//alert('aaaaaaa');
+						//console.log(adminUsersService);
+						return adminUsersService.getAdminUser($stateParams.id);
 					}
-					**/
+					
 				},
 				bodyClass: 'admin-users detail'
 			})
@@ -113,11 +115,11 @@
 			translate: 'ADMIN_USERS.BROWSE'
 		});
 
-		msNavigationServiceProvider.saveItem('admin-users.add', {
+		/* msNavigationServiceProvider.saveItem('admin-users.add', {
 			title    : 'Add New Admin User',
 			icon     : 'icon-tile-four',
 			state    : 'app.admin-users.add',
 			translate: 'ADMIN_USERS.ADD'
-		});
+		}); */
 	}
 })();

@@ -31,6 +31,31 @@
                             </div>
                         </md-input-container>
                     </div>
+					
+					<div layout="column" layout-gt-sm="row" ng-show="vm.newUser">
+						<md-input-container flex>
+						<input type="password" name="password" ng-model="vm.user.password" placeholder="Password"
+							   		   required>
+						<div ng-messages="user.password.$error" role="alert">
+							<div ng-message="required">
+								<span>Password field is required</span>
+							</div>
+						</div>
+						</md-input-container>
+						<md-input-container flex>
+							<input type="password" name="passwordConfirm" ng-model="vm.user.passwordConfirm"
+								   placeholder="Password (Confirm)"
+								   	   required>
+							<div ng-messages="user.passwordConfirm.$error" role="alert">
+								<div ng-message="required">
+									<span>Password (Confirm) field is required</span>
+								</div>
+								<div ng-show="vm.user.password != vm.user.passwordConfirm"  class="md-input-message-animation">
+									<span>Password is not same</span>
+								</div>
+							</div>
+						</md-input-container>
+					</div> 
 
                     <div layout="column" layout-gt-xs="row">
                         <!-- <md-input-container flex>
@@ -48,9 +73,9 @@
                         </md-input-container> -->
 
                         <md-input-container flex>
-                            <input  name="phone" ng-model="vm.user.phone" placeholder="9988776655"
+                            <input  name="phoneNumber" ng-model="vm.user.phoneNumber" placeholder="Phone Number"
                                   md-maxlength="10"  required>
-                            <div ng-messages="user.phone.$error"
+                            <div ng-messages="user.phoneNumber.$error"
                                  role="alert" multiple>
                                 <div ng-message="required">
                                     <span>Phone Number field is required.</span>
@@ -61,6 +86,23 @@
                             </div>
                         </md-input-container>
                     </div>
+					
+					<div layout="column" layout-gt-xs="row">
+                        <md-input-container flex>
+                           <md-input-container flex>
+                            <label>State</label>
+                            <md-select ng-model="vm.user.status">
+                                <md-option value="Active">
+                                    Active
+                                </md-option>
+								 <md-option value="Suspended">
+                                    Suspended
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        </md-input-container>
+                    </div>
+					
 
                     <md-input-container class="md-block">
                         <label>Short Bio</label>
@@ -91,7 +133,7 @@
 									<md-button class="md-accent md-raised" flow-btn>
 										Upload
 									</md-button>
-									<span class="secondary-text mt-8">You can also drop images here to upload. Only PNG, JPG - Max. 8MB</span>
+									<!-- <span class="secondary-text mt-8">You can also drop images here to upload. Only PNG, JPG - Max. 8MB</span> -->
 								</div>
 
 								<div class="mv-32" layout="row" layout-align="center center">
@@ -101,7 +143,7 @@
 								</div>
 
 								<div layout="row" layout-align="start start" layout-wrap>
-								<img class="media user-img" ng-src="{{vm.user.media.url }}" style="max-width: 250px; margin: 0 auto;">
+								<img class="media user-img" ng-src="{{vm.user.profilePic }}" style="max-width: 250px; margin: 0 auto;">
 									<div ng-repeat="image in vm.user.images" ng-switch="image.type">
 										<div class="user-image uploading" ng-switch-when="uploading" layout="row"
 											 layout-align="center center">
@@ -121,17 +163,25 @@
 									</div>
 								</div>
 
-								<div class="p-8 font-size-12" layout="row" layout-align="center center">
-									Click on images to activate the zoom!
-								</div>
+								
 							</div>
 						</div>
                     </md-input-container>
-
-                    <md-button type="submit" class="md-raised md-accent" aria-label="Submit"
-                               ng-disabled="user.$invalid || user.$pristine">
-                        Submit
-                    </md-button>
+					<div class="align-left">
+						<md-button type="submit" class="md-raised md-accent" aria-label="Submit"
+								   ng-disabled="user.$invalid || user.$pristine || vm.user.password != vm.user.passwordConfirm" >
+							Submit
+						</md-button>
+					</div>
+					<div  class="align-right">
+						<md-button  type="button" class="md-raised md-warn" aria-label="Delete"  ng-show="!vm.newUser">
+							Delete
+						</md-button>
+						<md-button  type="button" class="md-raised md-warn" aria-label="Delete" 
+									ng-show="vm.newUser"  ng-click="vm.goBack()">
+							Cancel
+						</md-button>
+					</div>
                 </form>
 
             </div>

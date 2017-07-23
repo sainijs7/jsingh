@@ -113,21 +113,16 @@
 		function newAdminUser()
 		{
 			return {
-				categories      : ['None'],
-				images          : [
-					{
-						default: true,
-						id     : 1,
-						url    : 'assets/images/ecommerce/adminuser-image-placeholder.png',
-						type   : 'image'
-					}
-				],
-				priceTaxExcl    : 0,
-				priceTaxIncl    : 0,
-				taxRate         : 0,
-				quantity        : 0,
-				extraShippingFee: 0,
-				active          : false
+				fullname      : "",
+				email    : "",
+				password    : "",
+				phoneNumber         : "",
+				shortBio        : "",
+				status        : "",
+				profilePic        : 'assets/images/avatars/profile.jpg',
+				dateCreated: "",
+				lastModified: "",
+				lastLogin: "",
 			};
 		}
 

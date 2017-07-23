@@ -7,10 +7,10 @@
              'app.pages.coming-soon',
              'app.pages.auth.login',
 			  'app.pages.auth.forgot-password',
-			  'app.pages.location.add-province',
-			  'app.pages.location.add-city',
-			  'app.pages.location.add-district',
-			  'app.pages.notification.add-notification',
+			  'app.location.city',
+			  'app.location.district',
+			  'app.location.province',
+			  'app.notification'
 			  //'app.pages.dashboard',
 			  
 			 

@@ -16,42 +16,7 @@
 
 // Slide Up
 .animate-slide-up {
-    @include easingOutQuadTimingTransition(400ms);
-    opacity: 1;
-
-    // Enter & Leave
-    &.ng-enter {
-        transform: translateY(100%);
-        opacity: 0;
-
-        &.ng-enter-active {
-            transition-property: all;
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    &.ng-leave {
-        transform: translateY(0);
-        opacity: 1;
-
-        &.ng-leave-active {
-            transition-property: all;
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-    }
-
-    // Hide
-    &.ng-hide {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    &.ng-hide-add-active,
-    &.ng-hide-remove-active {
-        transition-property: all;
-    }
+    
 }
 
 // Slide Down

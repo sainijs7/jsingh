@@ -1,0 +1,17 @@
+{
+    "data": [
+        
+        {
+            "id": 1,
+            "districtName": "Delhi",
+            "longitude": "89.12345",
+            "latitude": "66.4847",
+            "googlePlaceId": "1234567",
+            "shortDesc": "This is test description of user.",
+            "dateCreated": "15/7/2017",
+            "lastModified": "18/7/2017"
+        }
+		
+		
+    ]
+}

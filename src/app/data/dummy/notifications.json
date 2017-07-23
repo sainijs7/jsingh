@@ -1,0 +1,16 @@
+{
+    "data": [
+        
+        {
+            "id": 1,
+            "title": "test",
+            "contentSummary": "This is test notification",
+            "status": "active",
+            "expiryDate": "15/7/2017",
+            "dateCreated": "15/7/2017",
+            "lastModified": "18/7/2017"
+        }
+		
+		
+    ]
+}

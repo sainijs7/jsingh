@@ -7,19 +7,30 @@
         .controller('AdminController', AdminController);
 
     /** @ngInject */
-    function AdminController($scope, $rootScope)
+    function AdminController($scope, $rootScope, $state, Admin)
     {
 		
 		var vm = this;
 		
+		
         // Data
-		vm.user = {media:{}, images:{}};
+		vm.user = Admin;
+		//vm.user = {media:{}, images:{}};
+		vm.newUser = false;
+		
 		vm.fileAdded = fileAdded;
         vm.upload = upload;
         vm.fileSuccess = fileSuccess;
-		vm.updateImageZoomOptions = updateImageZoomOptions;
+		
+		vm.goBack = goBack;
+		
+		
 		
         //////////
+		if( $state.current.name == 'app.admin-users.add')
+		{
+			vm.newUser = true;
+		}
 
         // Remove the splash screen
         $scope.$on('$viewContentAnimationEnded', function (event)
@@ -41,29 +52,11 @@
          */
         function init()
         {
-            if ( vm.user.images.length > 0 )
-            {
-                vm.updateImageZoomOptions(vm.product.images[0].url);
-            }
+
         }
 		
-		/**
-         * Update image zoom options
-         *
-         * @param url
-         */
-        function updateImageZoomOptions(url)
-        {
-            vm.imageZoomOptions = {
-                images: [
-                    {
-                        thumb : url,
-                        medium: url,
-                        large : url
-                    }
-                ]
-            };
-        }
+		
+       
 		 /**
          * File added callback
          * Triggers when files added to the uploader
@@ -84,7 +77,7 @@
                     fileReader.readAsDataURL(file.file);
                     fileReader.onload = function (event)
                     {
-                        vm.user.media.url = event.target.result;
+                        vm.user.profilePic= event.target.result;
 						//alert(vm.user.media.url);
                     };
 					
@@ -121,7 +114,7 @@
                     fileReader.readAsDataURL(file.file);
                     fileReader.onload = function (event)
                     {
-                        vm.user.media.url = event.target.result;
+                        vm.user.profilePic = event.target.result;
 						//alert(vm.user.media.url);
                     };
 
@@ -143,14 +136,24 @@
                     fileReader.readAsDataURL(media.file.file);
                     fileReader.onload = function (event)
                     {
-                        media.url = event.target.result;
-						alert(media.url);
+                        profilePic = event.target.result;
+						//alert(media.url);
                     };
 
                     // Update the image type so the overlay can go away
                     media.type = 'image';
                 }
             });
+        }
+		
+		/**
+         * Cancel  new admin
+         * Go back toi admins browse page
+         *
+        */
+		 function goBack()
+        {
+           $state.go('app.admin-users.browse');
         }
 		
 		
