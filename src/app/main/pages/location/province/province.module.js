@@ -65,7 +65,7 @@
 		
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/location/province');
+        $translatePartialLoaderProvider.addPart('app/main/pages/location/province');
 
         // Navigation
          msNavigationServiceProvider.saveItem('pages.Location.provinces', {

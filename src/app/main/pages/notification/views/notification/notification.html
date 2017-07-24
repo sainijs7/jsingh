@@ -1,7 +1,7 @@
 <div layout="row">
 
             <!-- BASIC FORM -->
-            <div class="form-wrapper md-whiteframe-1dp" flex="80">
+            <div class="form-wrapper md-whiteframe-1dp" flex="100">
 
                 <form name="notification" class="md-inline-form" novalidate>
 
@@ -41,16 +41,16 @@
 							<label>Status</label>
 							<md-select ng-model="vm.notification.status">
 								<md-option value="Active">
-									Active
+									Draft
 								</md-option>
 								<md-option value="Inactive">
-									In active
+									Published
 								</md-option>
 							</md-select>
 						</md-input-container>
 						
 						<md-input-container  flex="20">	
-							<md-datepicker ng-model="vm.notification.expiryDate" ng-required="true" name="expiryDate" md-placeholder="Expiry Date" ></md-datepicker>
+							<md-datepicker ng-model="vm.notification.expiryDate" ng-required="true" name="expiryDate" md-placeholder="Expiry Date*" required></md-datepicker>
 							<div ng-messages="notification.expiryDate.$error"
 									 role="alert">
 									<div ng-message="required">

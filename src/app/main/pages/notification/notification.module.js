@@ -65,7 +65,7 @@
 		
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/notification');
+        $translatePartialLoaderProvider.addPart('app/main/pages/notification');
 
         // Navigation
          msNavigationServiceProvider.saveItem('notifications', {

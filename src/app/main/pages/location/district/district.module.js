@@ -65,7 +65,7 @@
 		
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/location/district');
+        $translatePartialLoaderProvider.addPart('app/main/pages/location/district');
 
         // Navigation
          msNavigationServiceProvider.saveItem('pages.Location.districts', {

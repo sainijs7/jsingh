@@ -65,7 +65,7 @@
 		
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/location/city');
+        $translatePartialLoaderProvider.addPart('app/main/pages/location/city');
 
         // Navigation
          msNavigationServiceProvider.saveItem('pages.Location.cities', {
