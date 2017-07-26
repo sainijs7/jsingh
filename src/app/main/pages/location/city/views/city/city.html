@@ -60,6 +60,17 @@
                         <textarea ng-model="vm.city.shortDesc" md-maxlength="150" max-rows="5"></textarea>
                     </md-input-container>
 					
+					<div layout="column" layout-gt-sm="row" ng-show="!vm.newCity">
+                        <md-input-container flex>
+                            <input type="text" name="dateCreated" ng-model="vm.city.dateCreated"
+                                   placeholder="Date Created" disabled="true" >
+                        </md-input-container>
+
+                         <md-input-container flex>
+                            <input type="text" name="lastModified" ng-model="vm.city.lastModified"
+                                   placeholder="Last Modified" disabled="true">
+                        </md-input-container>
+                    </div>
 					
 					 
 

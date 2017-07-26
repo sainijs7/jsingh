@@ -40,10 +40,10 @@
 						<md-input-container  flex="20">
 							<label>Status</label>
 							<md-select ng-model="vm.notification.status">
-								<md-option value="Active">
+								<md-option value="draft">
 									Draft
 								</md-option>
-								<md-option value="Inactive">
+								<md-option value="published ">
 									Published
 								</md-option>
 							</md-select>
@@ -59,6 +59,19 @@
 							</div>
 						</md-input-container>
 					</div>
+					
+					<div layout="column" layout-gt-sm="row" ng-show="!vm.newNotification">
+                        <md-input-container flex>
+                            <input type="text" name="dateCreated" ng-model="vm.notification.dateCreated"
+                                   placeholder="Date Created" disabled="true" >
+                        </md-input-container>
+
+                         <md-input-container flex>
+                            <input type="text" name="lastModified" ng-model="vm.notification.lastModified"
+                                   placeholder="Last Modified" disabled="true">
+                        </md-input-container>
+                    </div>
+					
 					
 					
 					

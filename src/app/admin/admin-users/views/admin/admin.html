@@ -10,7 +10,7 @@
                     <div layout="column" layout-gt-sm="row">
                         <md-input-container flex>
                             <input type="text" name="fullname" ng-model="vm.user.fullname"
-                                   placeholder="Fullname"
+                                   placeholder="Full Name"
                                    required>
                             <div ng-messages="user.fullname.$error"
                                  role="alert">
@@ -87,6 +87,11 @@
                         </md-input-container>
                     </div>
 					
+					 <md-input-container class="md-block">
+                        <label>Short Bio</label>
+                        <textarea ng-model="vm.user.shortBio" md-maxlength="150" max-rows="5"></textarea>
+                    </md-input-container>
+					
 					<div layout="column" layout-gt-xs="row">
                         <md-input-container flex>
                            <md-input-container flex>
@@ -101,13 +106,31 @@
                             </md-select>
                         </md-input-container>
                         </md-input-container>
+						
+						 <md-input-container flex  ng-show="!vm.newUser">
+                            <input type="text" name="lastLogin" ng-model="vm.user.lastLogin"
+                                   placeholder="Last Login" disabled="true"
+                                   required>
+                        </md-input-container>
+						
                     </div>
 					
+					<div layout="column" layout-gt-sm="row" ng-show="!vm.newUser">
+                        <md-input-container flex>
+                            <input type="text" name="dateCreated" ng-model="vm.user.dateCreated"
+                                   placeholder="Date Created" disabled="true"
+                                   required>
+                        </md-input-container>
 
-                    <md-input-container class="md-block">
-                        <label>Short Bio</label>
-                        <textarea ng-model="vm.user.shortBio" md-maxlength="150" max-rows="5"></textarea>
-                    </md-input-container>
+                         <md-input-container flex>
+                            <input type="text" name="lastModified" ng-model="vm.user.lastModified"
+                                   placeholder="Last Modified" disabled="true"
+                                   required>
+                        </md-input-container>
+                    </div>
+					
+					
+					
 					
 					
 					 <md-input-container class="md-block">

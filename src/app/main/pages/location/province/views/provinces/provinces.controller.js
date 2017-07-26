@@ -21,8 +21,6 @@
 				{
 					// Target the email column
 					targets   : 0,
-					filterable: false,
-					sortable  : false,
 					width     : '80px'
 				},
 				{
