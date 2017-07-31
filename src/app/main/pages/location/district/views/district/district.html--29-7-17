@@ -46,20 +46,12 @@
                                 </div>
                             </div>
                         </md-input-container>
-						<md-input-container flex>
-                            <input type="text" name="googlePlaceId" ng-model="vm.district.googlePlaceId"
-                                   placeholder="Google Place ID" >
-                        </md-input-container>
                     </div>
 					
 					 <div layout="column" layout-gt-sm="row">
                         <md-input-container flex>
-                            <input type="text" name="city" ng-model="vm.district.city"
-                                   placeholder="City" >
-                        </md-input-container>
-						<md-input-container flex>
-                            <input type="text" name="province" ng-model="vm.district.province"
-                                   placeholder="Province" >
+                            <input type="text" name="googlePlaceId" ng-model="vm.district.googlePlaceId"
+                                   placeholder="Google Place ID" >
                         </md-input-container>
 					</div>
 

@@ -39,3 +39,22 @@
     float: left;
 	width: 50%;
 }
+
+
+.upload-img-my {
+	display: inline-block;
+	width: 20% !important;
+
+}
+.user-img-my {
+	display: inline-block;
+	width: auto;
+	vertical-align: middle;
+
+}
+
+@media only screen and (min-width: 1024px) {
+	.rmv-scroll md-input-container {
+		margin: 10px 0 !important;
+	}
+}

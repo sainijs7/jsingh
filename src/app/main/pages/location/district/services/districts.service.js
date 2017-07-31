@@ -120,6 +120,8 @@
 				longitude    : "",
 				latitude    : "",
 				googlePlaceId         : "",
+				city         : "",
+				province         : "",
 				shortDesc        : "",
 				dateCreated        : "",
 				lastModified        : ""

@@ -46,12 +46,16 @@
                                 </div>
                             </div>
                         </md-input-container>
+						<md-input-container flex>
+                            <input type="text" name="googlePlaceId" ng-model="vm.city.googlePlaceId"
+                                   placeholder="Google Place ID" >
+                        </md-input-container>
                     </div>
 					
 					 <div layout="column" layout-gt-sm="row">
                         <md-input-container flex>
-                            <input type="text" name="googlePlaceId" ng-model="vm.city.googlePlaceId"
-                                   placeholder="Google Place ID" >
+                            <input type="text" name="province" ng-model="vm.city.province"
+                                   placeholder="Province" >
                         </md-input-container>
 					</div>
 

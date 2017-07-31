@@ -45,7 +45,12 @@
 							
 							<th class="secondary-text">
 								<div class="table-header">
-									<span class="column-title">City Name</span>
+									<span class="column-title">City</span>
+								</div>
+							</th>
+							<th class="secondary-text">
+								<div class="table-header">
+									<span class="column-title">Province</span>
 								</div>
 							</th>
 							<th class="secondary-text">
@@ -75,6 +80,7 @@
 					<tbody>
 						<tr ng-repeat="product in ::vm.cities">
 							<td>{{product.cityName}}</td>
+							<td>static</td>
 							<td>{{product.longitude}}</td>
 							<td>{{product.latitude}}</td>
 							<td>{{product.googlePlaceId}}</td>

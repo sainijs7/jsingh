@@ -1,4 +1,4 @@
-<div layout="row" class="rmv-scroll">
+<div layout="row">
 
             <!-- BASIC FORM -->
             <div class="form-wrapper md-whiteframe-1dp" flex="95">
@@ -58,8 +58,21 @@
 					</div> 
 
                     <div layout="column" layout-gt-xs="row">
-                      
-						<md-input-container flex>
+                        <!-- <md-input-container flex>
+                            <label>City</label>
+                            <input type="text" name="city" ng-model="vm.user.city">
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>State</label>
+                            <md-select ng-model="vm.user.state">
+                                <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                                    {{state.abbrev}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container> -->
+
+                        <md-input-container flex>
                             <input  name="phoneNumber" ng-model="vm.user.phoneNumber" placeholder="Phone Number"
                                   md-maxlength="10"  required>
                             <div ng-messages="user.phoneNumber.$error"
@@ -72,9 +85,16 @@
                                 </div>
                             </div>
                         </md-input-container>
-						
-						
-						<md-input-container flex>
+                    </div>
+					
+					 <md-input-container class="md-block">
+                        <label>Short Bio</label>
+                        <textarea ng-model="vm.user.shortBio" md-maxlength="150" max-rows="5"></textarea>
+                    </md-input-container>
+					
+					<div layout="column" layout-gt-xs="row">
+                        <md-input-container flex>
+                           <md-input-container flex>
                             <label>Status</label>
                             <md-select ng-model="vm.user.status">
                                 <md-option value="Active">
@@ -85,7 +105,7 @@
                                 </md-option>
                             </md-select>
                         </md-input-container>
-                       
+                        </md-input-container>
 						
 						 <md-input-container flex  ng-show="!vm.newUser">
                             <input type="text" name="lastLogin" ng-model="vm.user.lastLogin"
@@ -94,12 +114,6 @@
                         </md-input-container>
 						
                     </div>
-					
-					 <md-input-container class="md-block">
-                        <label>Short Bio</label>
-                        <textarea ng-model="vm.user.shortBio" md-maxlength="150" max-rows="5"></textarea>
-                    </md-input-container>
-					
 					
 					<div layout="column" layout-gt-sm="row" ng-show="!vm.newUser">
                         <md-input-container flex>
@@ -134,21 +148,24 @@
 								 flow-drag-leave="vm.dropping=false"
 								 ng-class="{'dropping':vm.dropping}">
 
-								
-								<div class="upload-button upload-img-my">
+								<div class="drop-text hint-text" layout="row" layout-align="center center">
+									<span translate="EC.DROP_TO_UPLOAD">Drop to upload</span>
+								</div>
+
+								<div class="upload-button" layout="column" layout-align="center center">
 									<md-button class="md-accent md-raised" flow-btn>
 										Upload
 									</md-button>
-									
+									<!-- <span class="secondary-text mt-8">You can also drop images here to upload. Only PNG, JPG - Max. 8MB</span> -->
 								</div>
 
-								<!-- <div class="mv-32" layout="row" layout-align="center center">
+								<div class="mv-32" layout="row" layout-align="center center">
 									<div class="image-zoom-area">
 										<img wip-image-zoom="vm.imageZoomOptions">
 									</div>
-								</div> -->
+								</div>
 
-								<div layout="row" layout-align="start start" layout-wrap class="user-img-my">
+								<div layout="row" layout-align="start start" layout-wrap>
 								<img class="media user-img" ng-src="{{vm.user.profilePic }}" style="max-width: 250px; margin: 0 auto;">
 									<div ng-repeat="image in vm.user.images" ng-switch="image.type">
 										<div class="user-image uploading" ng-switch-when="uploading" layout="row"
@@ -173,7 +190,6 @@
 							</div>
 						</div>
                     </md-input-container>
-					
 					<div class="align-left">
 						<md-button type="submit" class="md-raised md-accent" aria-label="Submit"
 								   ng-disabled="user.$invalid || user.$pristine || vm.user.password != vm.user.passwordConfirm" >

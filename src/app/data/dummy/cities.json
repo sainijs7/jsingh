@@ -7,6 +7,7 @@
             "longitude": "56.4689",
             "latitude": "99.1234",
             "googlePlaceId": "1324656942",
+            "province": "punjab",
             "shortDesc": "This is test description of user.",
             "dateCreated": "15/7/2017",
             "lastModified": "18/7/2017"

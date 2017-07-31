@@ -45,7 +45,17 @@
 							
 							<th class="secondary-text">
 								<div class="table-header">
-									<span class="column-title">District Name</span>
+									<span class="column-title">District</span>
+								</div>
+							</th>
+							<th class="secondary-text">
+								<div class="table-header">
+									<span class="column-title">City</span>
+								</div>
+							</th>
+							<th class="secondary-text">
+								<div class="table-header">
+									<span class="column-title">Province</span>
 								</div>
 							</th>
 							<th class="secondary-text">
@@ -75,6 +85,8 @@
 					<tbody>
 						<tr ng-repeat="product in ::vm.districts">
 							<td>{{product.districtName}}</td>
+							<td>{{product.city}}</td>
+							<td>{{product.province}}</td>
 							<td>{{product.longitude}}</td>
 							<td>{{product.latitude}}</td>
 							<td>{{product.googlePlaceId}}</td>

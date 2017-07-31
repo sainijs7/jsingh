@@ -119,7 +119,8 @@
 				cityName      : "",
 				longitude    : "",
 				latitude    : "",
-				googlePlaceId         : "",
+				googlePlaceId  : "",
+				province         : "",
 				shortDesc        : "",
 				dateCreated        : "",
 				lastModified        : ""
